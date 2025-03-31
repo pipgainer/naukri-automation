@@ -1,0 +1,26 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore dotenv files (contains credentials)
+.env
+
+# Ignore log and cache files
+*.log
+*.cache
+*.bak
+
+# Ignore Selenium driver logs
+chromedriver.log
+geckodriver.log
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+*.iml
