@@ -19,24 +19,28 @@ Ensure you have **Python** installed, then run:
 pip install selenium python-dotenv
 ```
 
-2️⃣ Set Up Your Credentials
+### 2️⃣ Set Up Your Credentials
+
 Create a .env file in the project folder and add:
 
 NAUKRI_EMAIL=your-email@example.com
 NAUKRI_PASSWORD=your-secure-password
 ⚠️ Important: Do not share this file or commit it to Git.
 
-3️⃣ Download ChromeDriver
+### 3️⃣ Download ChromeDriver
+
 Find your Chrome version by going to chrome://settings/help
 
 Download the matching ChromeDriver from here
 
 Place the chromedriver.exe in the project folder.
 
-4️⃣ Run the Script
+### 4️⃣ Run the Script
+
 python index.py
 
-5️⃣ How It Works
+### 5️⃣ How It Works
+
 Opens Naukri.com and logs in.
 
 Goes to the resume upload section.
