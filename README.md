@@ -23,8 +23,10 @@ pip install selenium python-dotenv
 
 Create a .env file in the project folder and add:
 
-NAUKRI_EMAIL=your-email@example.com
-NAUKRI_PASSWORD=your-secure-password
+NAUKRI_EMAIL=your-email@example.com <br />
+NAUKRI_PASSWORD=your-secure-password <br />
+RESUME_FIRST_NAME=your-first-resume-name <br />
+RESUME_SECOND_NAME=your-second-resume-name <br />
 ⚠️ Important: Do not share this file or commit it to Git.
 
 ### 3️⃣ Download ChromeDriver
@@ -37,7 +39,9 @@ Place the chromedriver.exe in the project folder.
 
 ### 4️⃣ Run the Script
 
+```sh
 python index.py
+```
 
 ### 5️⃣ How It Works
 
@@ -53,14 +57,15 @@ Uploads resume2.
 
 Loops forever to keep your profile updated.
 
-🤖 Technologies Used
+### 🤖 Technologies Used
+
 Python 3+
 
 Selenium
 
 dotenv (for secure credential storage)
 
-❓ FAQ
+### ❓ FAQ
 
 1. The script closes automatically after login?
    👉 Add a time.sleep(10) before the next action to debug.

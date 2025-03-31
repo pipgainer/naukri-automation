@@ -16,7 +16,13 @@ NAUKRI_EMAIL = os.getenv("NAUKRI_EMAIL")
 NAUKRI_PASSWORD = os.getenv("NAUKRI_PASSWORD")
 
 # Set up WebDriver
-chrome_driver_path = "D:\\naukri-automation\\chromedriver.exe"
+# Get the root directory (where the script is located)
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Set paths relative to the root directory
+chrome_driver_path = os.path.join(ROOT_DIR, "chromedriver.exe")
+if not os.path.exists(chrome_driver_path):
+    raise FileNotFoundError(f"ChromeDriver not found at {chrome_driver_path}. Please download it from https://chromedriver.chromium.org/downloads and place it in the same directory as this script.")
 service = Service(chrome_driver_path)
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
@@ -81,14 +87,16 @@ def upload_resume(resume_path):
 # 🔄 **Loop to Upload Resumes Indefinitely**
 while True:
     # Upload resume1
-    upload_resume("D:\\naukri-automation\\AbhishekPowadeMobileDeveloper.pdf")
+    resume1_path = os.path.join(ROOT_DIR, os.getenv("RESUME_FIRST_NAME"))  # Change extension if needed
+    upload_resume(resume1_path)
 
     # Wait for 5 minutes
     print("Waiting for 5 minutes before uploading the second resume...")
     time.sleep(300)
 
     # Upload resume2
-    upload_resume("D:\\naukri-automation\\AbhishekPowadeReactNativeDeveloper.pdf")
+    resume2_path = os.path.join(ROOT_DIR, os.getenv("RESUME_SECOND_NAME"))  # Change extension if needed
+    upload_resume(resume2_path)
 
     # Wait for 5 minutes
     print("Waiting for 5 minutes before repeating the process...")
