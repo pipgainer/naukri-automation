@@ -60,7 +60,10 @@ update_resume_button = WebDriverWait(driver, 10).until(
 )
 update_resume_button.click()
 
+global loop_count
+
 def upload_resume(resume_path):
+    loop_count += 1
     # Wait for the resume upload section to load
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, "//*[@id='lazyAttachCV']/div/div[2]/div[2]/div/div[2]/div[1]/div/section"))
