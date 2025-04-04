@@ -23,6 +23,8 @@ pip install selenium python-dotenv
 
 Create a .env file in the project folder and add:
 
+For reference we are using 2 resumes for better chances, you can also use different types of resumes as you want but you will need to tweak the flow as per that.
+
 NAUKRI_EMAIL=your-email@example.com <br />
 NAUKRI_PASSWORD=your-secure-password <br />
 RESUME_FIRST_NAME=your-first-resume-name <br />
