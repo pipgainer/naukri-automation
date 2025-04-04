@@ -60,10 +60,7 @@ update_resume_button = WebDriverWait(driver, 10).until(
 )
 update_resume_button.click()
 
-global loop_count
-
 def upload_resume(resume_path):
-    loop_count += 1
     # Wait for the resume upload section to load
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, "//*[@id='lazyAttachCV']/div/div[2]/div[2]/div/div[2]/div[1]/div/section"))
@@ -83,7 +80,9 @@ def upload_resume(resume_path):
 
     # Use PyAutoGUI to type resume path and press Enter
     pyautogui.write(resume_path)  # Type the file path
+    pyautogui.PAUSE = 2.5
     pyautogui.press("enter")  # Press Enter to select file
+    pyautogui.PAUSE = 2.5
 
     print(f'Resume {resume_path} uploaded successfully!')
 
@@ -91,6 +90,7 @@ def upload_resume(resume_path):
 while True:
     # Upload resume1
     resume1_path = os.path.join(ROOT_DIR, os.getenv("RESUME_FIRST_NAME"))  # Change extension if needed
+    time.sleep(2)
     upload_resume(resume1_path)
 
     # Wait for 5 minutes
@@ -99,6 +99,7 @@ while True:
 
     # Upload resume2
     resume2_path = os.path.join(ROOT_DIR, os.getenv("RESUME_SECOND_NAME"))  # Change extension if needed
+    time.sleep(2)
     upload_resume(resume2_path)
 
     # Wait for 5 minutes
